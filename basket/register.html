@@ -34,10 +34,20 @@
             <h3 class="text-center mb-5">Sign Up</h3>
             <form>
                 <input id="user-name" name="userName" class="form-control" type="text" placeholder="enter user name">
-                <input id="user-email" name="userEmail" class="form-control" type="email" placeholder="enter user email">
-                <input id="user-password" name="userPassword" class="form-control" type="password" placeholder="enter user password">
-                <input id="user-confirm-password" name="userConfirmPass" class="form-control" type="password" placeholder="confirm password">
-                <button class="btn btn-warning d-block mx-auto" type="submit">Sign Up</button>
+                <span class="text-danger mb-3  d-none  ">Input is min 3 char</span>
+                <input id="user-email" name="userEmail" class="form-control" type="email"
+                    placeholder="enter user email">
+                <span class="text-danger mb-3  d-none ">value is not correct</span>
+                <div class="d-flex">
+                    <input id="user-password" name="userPassword" class="form-control" type="password"
+                        placeholder="enter user password">
+                    <i id="password-toggle" class="far fa-eye"></i>
+                </div>
+                <span class="text-danger mb-3  d-none ">Value is min 8 char</span>
+                <span class="text-danger mb-3  d-none ">value should be include min1 big char and min1 @</span>
+                <input id="user-confirm-password" name="userConfirmPass" class="form-control" type="password"
+                    placeholder="confirm password">
+                <button class="btn btn-warning d-block  mx-auto" type="submit">Sign Up</button>
             </form>
         </section>
     </main>

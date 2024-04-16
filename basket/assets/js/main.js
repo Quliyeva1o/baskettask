@@ -13,6 +13,12 @@ window.addEventListener("load", () => {
   if (!localStorage.getItem("users")) {
     localStorage.setItem("users", JSON.stringify([]));
   }
+  if (!sessionStorage.getItem("notrememberedUser")) {
+    sessionStorage.setItem("notrememberedUser", JSON.stringify([]));
+  }
+  if (!localStorage.getItem("rememberedUser")) {
+    localStorage.setItem("rememberedUser", JSON.stringify([]));
+  }
 });
 
 data.products.forEach((product) => {
@@ -265,13 +271,19 @@ clearAll.addEventListener("click", () => {
     }
   });
 });
-
 console.log(
   "TEST: ",
-  JSON.parse(localStorage.getItem("users")).some((x) => !x.isLogged)
+  !JSON.parse(localStorage.getItem("users")).isLogged
 );
 if (
-  JSON.parse(localStorage.getItem("users")).every((x) => x.isLogged === false)
+  !JSON.parse(sessionStorage.getItem("notrememberedUser")).isLogged 
+  &&
+  !JSON.parse(localStorage.getItem("users")).isLogged
+  &&
+  !JSON.parse(localStorage.getItem("rememberedUser")).isLogged 
+
 ) {
   window.location.replace("register.html");
 }
+
+

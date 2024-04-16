@@ -31,7 +31,7 @@ function renderHeader() {
             currentUser.isLogged = false;
             localStorage.setItem("users", JSON.stringify(localUsers));
             window.location.replace('login.html');
-            //recursion
+            
             renderHeader();
           });
         }
